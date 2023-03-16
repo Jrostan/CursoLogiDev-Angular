@@ -1,6 +1,6 @@
 <h1>hello world!!!</h1>
 <mat-divider></mat-divider>
-<section>
+<!-- <section>
   <div class="example-label">Icon</div>
   <div class="example-button-row">
     <div class="example-flex-container">
@@ -21,5 +21,31 @@
       </button>
     </div>
   </div>
-</section>
+</section> -->
 <mat-divider></mat-divider>
+<app-my-component1
+    [tittle]="title"
+    (sendMensage)="getMensage($event)"
+    ></app-my-component1>
+<app-my-component2 [tittle]="title" *ngIf="show2">
+  <h2 #contentChildA *ngIf="show">este es un contenido incertado</h2>
+  <!-- <div #contentChildA1>
+    <h2 #contentChildA *ngIf="show">este es un contenido incertado</h2>
+    <p>Con un poco de inforcaion esxta para probar</p>
+  </div> -->
+  <!-- <app-my-component1 #contentChildB
+    [tittle]="title"
+    (sendMensage)="getMensage($event)"
+    ></app-my-component1> -->
+</app-my-component2>
+
+<div class="example-button-container">
+  <button mat-fab color="primary" aria-label="Example icon button with a heart icon" (click)="clickChangeTitle()">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-fab color="accent" aria-label="Example icon button with a heart icon" (click)="clickbibi2()">
+    <mat-icon>open_in_new</mat-icon>
+  </button>
+</div>
+
+
