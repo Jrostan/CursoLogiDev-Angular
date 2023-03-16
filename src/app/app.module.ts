@@ -9,15 +9,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MyComponent1Component } from './my-component1/my-component1.component';
-import { MyComponent2Component } from './my-component2/my-component2.component';
+import { MyModule1Module } from './Componentes/my-module1.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MyComponent1Component,
-    MyComponent2Component
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +21,8 @@ import { MyComponent2Component } from './my-component2/my-component2.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MyModule1Module
   ],
   providers: [],
   bootstrap: [AppComponent]

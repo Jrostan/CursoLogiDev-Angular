@@ -1,6 +1,6 @@
 import { AfterContentChecked, AfterContentInit, ContentChild, ContentChildren, DoCheck, Input, OnDestroy, QueryList } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { AppComponent } from 'src/app/app.component';
 import { MyComponent1Component } from '../my-component1/my-component1.component';
 
 @Component({
@@ -23,7 +23,7 @@ export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit,
    }
 
    ngOnInit(): void {
-     console.log('**app-my-component2 -> ngOnInit');
+    //  console.log('**app-my-component2 -> ngOnInit');
     }
 
     ngDoCheck(): void {
@@ -43,6 +43,6 @@ export class MyComponent2Component implements OnInit, DoCheck, AfterContentInit,
     }
 
     ngOnDestroy(): void {
-      console.log('**app-my-component2 -> ngOnDistroy');
+      // console.log('**app-my-component2 -> ngOnDistroy');
     }
   }
