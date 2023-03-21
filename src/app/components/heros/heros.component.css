@@ -1,0 +1,47 @@
+.contenedor{
+  position: absolute;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex start;
+  /* border: 2px solid purple; */
+  width: min(36rem, 80%);
+  height: 80%;
+}
+
+h1, h2{
+  color: azure;
+  padding-left: 0.7rem;
+}
+
+button{
+  max-width: 6rem;
+  position: relative;
+  margin-left: 3%;
+}
+
+.full-width{
+  position: relative;
+  background-color: #4a4a4a;
+  margin-bottom: 1rem;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.full-width:hover, .full-width:focus-within {
+  background-color: #6e6e6e;
+}
+
+table{
+  background-color: #4a4a4a;
+}
+
+td:hover{
+  background-color: #6e6e6e;
+}
+
+tr:hover{
+  background-color: #5e5e5e;
+}

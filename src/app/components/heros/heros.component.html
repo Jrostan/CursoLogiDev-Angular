@@ -1,0 +1,105 @@
+<div class="contenedor">
+  <h1 #mytitle>Registro de heroes</h1>
+  <h2>{{titulo}}</h2>
+
+  <mat-form-field class="full-width">
+    <mat-label>Write your hero's name</mat-label>
+    <input matInput placeholder="Heroe's Name"
+    [disabled]="disabled"
+    (keydown)="keyUp($event)"
+    >
+  </mat-form-field>
+
+  <div class="botom-container">
+    <button mat-raised-button color="primary"
+    [disabled]="disabled"
+    (click)="clickGuardar()"
+    >Guardar</button>
+
+    <button mat-raised-button color="primary"
+    [disabled]="!disabled"
+    (click)="clickGuardar()"
+    >Editar</button>
+
+    <button mat-raised-button color="primary"
+    (click)="clickGuardar()"
+    >Reset</button>
+  </div>
+
+  <h3>PIPES</h3>
+  <table>
+    <tr>
+      <td>pipe</td>
+      <td>Targets</td>
+      <td>value</td>
+      <td>result</td>
+      <td>Estructura utilizada</td>
+    </tr>
+    <tr>
+      <td>uppercase</td>
+      <td>texts</td>
+      <td>{{titulo}}</td>
+      <td>{{titulo | uppercase}}</td>
+      <td> variable | uppercase </td>
+    </tr>
+    <tr>
+      <td>lowercase</td>
+      <td>texts</td>
+      <td>{{titulo}}</td>
+      <td>{{titulo | lowercase}}</td>
+      <td> variable | lowercase </td>
+    </tr>
+    <tr>
+      <td>slice:4:7</td>
+      <td>texts</td>
+      <td>{{titulo2}}</td>
+      <td>{{titulo2 | slice:indice1:indice2}}</td>
+      <td> variable | slice:4:11 </td>
+    </tr>
+    <tr>
+      <td>decimal</td>
+      <td>numbers</td>
+      <td>{{numero}}</td>
+      <td>{{numero | number:'2.2-3'}}</td>
+      <td> variable | number:'2.2-3' </td>
+    </tr>
+    <tr>
+      <td><a href="https://es.wikipedia.org/wiki/ISO_4217">Currency</a></td>
+      <td>currency</td>
+      <td>{{numero}}</td>
+      <td>{{numero | currency:'ARS':'symbol':'2.0-2'}}</td>
+      <td> variable |  currency:'ARS':'symbol':'2.0-2' </td>
+    </tr>
+    <tr>
+      <td>json</td>
+      <td>Objetos</td>
+      <td>{{objPrueba}}</td>
+      <td>{{objPrueba | json}}</td>
+      <td> variable |  json </td>
+    </tr>
+    <tr>
+      <td>async</td>
+      <td>Objetos asincronos</td>
+      <td>{{myPromesa}}</td>
+      <td>{{myPromesa | async}}</td>
+      <td> variable |  async </td>
+    </tr>
+    <tr>
+      <td>date</td>
+      <td>fechas</td>
+      <td>{{myDate}}</td>
+      <td>{{myDate | date:'short'}}</td>
+      <td> variable |  date:'short' </td>
+    </tr>
+    <tr>
+      <td>custom</td>
+      <td>moneda</td>
+      <td>{{numero}}</td>
+      <td>{{numero | customCurrency:'1.2-2'}}</td>
+      <td> variable |  customCurrency:'1.2-2' </td>
+    </tr>
+  </table>
+
+  <app-componet-prueba [titulo]="heroName"></app-componet-prueba>
+</div>
+
