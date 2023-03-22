@@ -1,0 +1,73 @@
+<div class="contenedor">
+  <h1 #mytitle>Registro de heroes</h1>
+  <h2>{{titulo}}</h2>
+
+  <mat-form-field class="full-width">
+    <mat-label>Write your hero's name</mat-label>
+    <input matInput placeholder="Heroe's Name"
+    [disabled]="disabled"
+    (keydown)="keyUp($event)"
+    [(ngModel)]="heroName"
+    >
+  </mat-form-field>
+
+  <div class="botom-container">
+    <button mat-raised-button color="primary"
+    [disabled]="disabled"
+    (click)="clickGuardar()"
+    >Guardar</button>
+
+    <button mat-raised-button color="primary"
+    [disabled]="!disabled"
+    (click)="clickAddHeroe()"
+    >ADD</button>
+
+    <button mat-raised-button color="primary"
+    [disabled]="!disabled"
+    (click)="clickGuardar()"
+    >Editar</button>
+
+    <button mat-raised-button color="primary"
+    [disabled]="!disabled"
+    (click)="clickReset()"
+    >Reset</button>
+
+    <button mat-raised-button color="primary"
+    (click)="clickTabla()"
+    >Tabla</button>
+  </div>
+
+  <app-componet-prueba [titulo]="heroName"></app-componet-prueba>
+
+  <hr>
+
+  <h2 *ngIf="verTabla">Lista de Heroes</h2>
+  <table #tabla *ngIf="verTabla">
+    <tr>
+      <td>Id</td>
+      <td>Nombre</td>
+    </tr>
+    <tr *ngFor="let heroe of myHeroeList">
+      <td>{{heroe.id}}</td>
+      <td>{{heroe.nombre}}</td>
+      <td>
+        <button mat-raised-button color="primary"
+        (click)="clickseleccionarHeroe(heroe)"
+        >Modificar</button>
+      </td>
+    </tr>
+  </table>
+
+  <div [ngSwitch]="heroeSeleccionado.id">
+    <h2 *ngSwitchCase="1"> ESTE HEROE ES EL NUEMRO 1</h2>
+    <h2 *ngSwitchCase="2"> ESTE HEROE ES EL NUEMRO 2</h2>
+    <h2 *ngSwitchCase="3"> ESTE HEROE ES EL NUEMRO 3</h2>
+  </div>
+
+  <label *ngIf="verTabla else templateTemp" >Demostracion template</label>
+  <ng-template #templateTemp>
+    <h3>Hola soy el template</h3>
+  </ng-template>
+
+</div>
+

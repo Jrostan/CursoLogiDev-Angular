@@ -7,6 +7,7 @@
     <input matInput placeholder="Heroe's Name"
     [disabled]="disabled"
     (keydown)="keyUp($event)"
+    [(ngModel)]="heroName"
     >
   </mat-form-field>
 
@@ -22,12 +23,21 @@
     >Editar</button>
 
     <button mat-raised-button color="primary"
-    (click)="clickGuardar()"
+    [disabled]="!disabled"
+    (click)="clickReset()"
     >Reset</button>
+
+    <button mat-raised-button color="primary"
+    (click)="clickTabla()"
+    >Tabla Pipes</button>
   </div>
 
+  <app-componet-prueba [titulo]="heroName"></app-componet-prueba>
+
+  <hr>
+
   <h3>PIPES</h3>
-  <table>
+  <table [ngClass]="{'tabla-hiden':verTabla}">
     <tr>
       <td>pipe</td>
       <td>Targets</td>
@@ -100,6 +110,5 @@
     </tr>
   </table>
 
-  <app-componet-prueba [titulo]="heroName"></app-componet-prueba>
 </div>
 

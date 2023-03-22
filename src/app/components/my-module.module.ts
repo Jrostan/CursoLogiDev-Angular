@@ -8,22 +8,27 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import { ComponetPruebaComponent } from './componet-prueba/componet-prueba.component';
 import { CustomCurrencyPipe } from './custom-currency.pipe';
+import { FormsModule } from '@angular/forms';
+import { HerosStructuralesComponent } from './heros-structurales/heros-structurales.component';
 
 
 @NgModule({
   declarations: [
     HerosComponent,
     ComponetPruebaComponent,
-    CustomCurrencyPipe],
+    CustomCurrencyPipe,
+    HerosStructuralesComponent],
   imports: [
     MatButtonModule,
     MatDividerModule,
     MatIconModule,
     MatInputModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
-    HerosComponent
+    HerosComponent,
+    HerosStructuralesComponent
   ]
 })
 export class MyModuleModule { }

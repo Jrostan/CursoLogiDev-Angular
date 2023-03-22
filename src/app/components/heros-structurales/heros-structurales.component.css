@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex start;
-  /* border: 2px solid purple; */
   width: min(36rem, 80%);
   height: 80%;
 }
@@ -48,9 +47,4 @@ tr:hover{
 
 hr{
   width: 100%;
-}
-
-.tabla-hiden{
-  display: none;
-  visibility: hidden;
 }
