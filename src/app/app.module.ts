@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+
+import { CardTvModule } from '../app/card-tv/card-tv.module'
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    CardTvModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

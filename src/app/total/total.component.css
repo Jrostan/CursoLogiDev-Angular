@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.container span {
+  font-size: 18px;
+}
+.container label {
+  font-size: 21px;
+  font-weight: bold;
+}
