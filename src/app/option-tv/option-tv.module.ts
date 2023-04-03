@@ -4,7 +4,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-// import { ColorCircleModule } from 'ngx-color/circle';
+import { ColorCircleModule } from 'ngx-color/circle';
 import { TotalModule } from './../total/total.module';
 
 
@@ -22,7 +22,8 @@ import { TotalModule } from './../total/total.module';
     FormsModule,
 		MatSlideToggleModule,
 		MatSelectModule,
-		TotalModule
+		TotalModule,
+    ColorCircleModule
   ]
 })
 export class OptionTvModule { }

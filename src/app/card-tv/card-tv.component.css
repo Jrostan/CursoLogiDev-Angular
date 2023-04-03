@@ -10,3 +10,6 @@
 .mat-card > :first-child {
   text-align: center;
 }
+.buttom-container{
+  display: flex;
+}
