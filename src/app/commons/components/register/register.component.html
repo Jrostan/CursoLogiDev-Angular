@@ -1,0 +1,71 @@
+<div class="container">
+	<div>
+		<img src="assets/img/logo-fuckyncode-boom.png" alt="Logo fucking-Kode">
+	</div>
+	<form
+		novalidate
+		class="container__form"
+	>
+  <mat-form-field appearance="outline">
+    <mat-label>User Name</mat-label>
+    <input
+      matInput
+      placeholder="Placeholder"
+      name="username"
+      required
+    />
+    <mat-icon class="material-icons-outlined" matSuffix>account_circle_outline</mat-icon>
+    <mat-error >
+      El usuario es requerido
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      placeholder="Placeholder"
+      name="password"
+      required
+    />
+    <mat-icon matSuffix>password</mat-icon>
+    <mat-error >
+      La contraseña es requerida
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Repeat password</mat-label>
+    <input
+      type="password"
+      matInput
+      placeholder="Placeholder"
+      name="password"
+      required
+    />
+    <mat-icon matSuffix>password</mat-icon>
+    <mat-error >
+      La contraseña es requerida
+    </mat-error>
+  </mat-form-field>
+
+		<!--
+      creo que el problema esta en el formControlName
+
+      <mat-form-field appearance="outline">
+			<mat-label>Password</mat-label>
+			<input type="password" matInput placeholder="Placeholder" formControlName="password" />
+			<mat-icon matSuffix>password</mat-icon>
+			<mat-error></mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline">
+			<mat-label>Repeat Password</mat-label>
+			<input type="password" matInput placeholder="Placeholder" formControlName="repeatPassword" />
+			<mat-icon matSuffix>password</mat-icon>
+		</mat-form-field>-->
+		<button mat-raised-button color="primary" type="button">Register</button>
+	</form>
+</div>
+

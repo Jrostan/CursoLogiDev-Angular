@@ -1,0 +1,50 @@
+
+<div class="container">
+   <div>
+    <img src="assets/img/logo-fuckyncode-boom.png" alt="Logo fucking-Kode">
+  </div>
+  <form class="container__form" #myFormLogin="ngForm">
+    <mat-form-field appearance="outline">
+      <mat-label>User Name</mat-label>
+      <input
+        matInput
+        placeholder="Placeholder"
+        name="username"
+        required
+      />
+      <mat-icon class="material-icons-outlined" matSuffix>account_circle_outline</mat-icon>
+      <mat-error >
+        El usuario es requerido
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Placeholder"
+        name="password"
+        required
+      />
+      <mat-icon matSuffix>password</mat-icon>
+      <mat-error >
+        La contraseña es requerida
+      </mat-error>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="clickLogin()"
+      [disabled]="!myFormLogin.valid"
+    >
+      Login
+    </button>
+    <label
+      (click)="clickOnRegister()"
+      class="registrate"
+      >Register</label
+    >
+  </form>
+</div>
+<!-- El routerLink="/register" es la forma de redireccionar directamente desde HTML -->

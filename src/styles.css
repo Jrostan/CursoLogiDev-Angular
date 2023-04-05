@@ -2,3 +2,36 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body{
+  background-color:  #4a4a4a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+/*Clases para el SnackBar*/
+body .mat-snack-bar-container {
+  color: white;
+  text-align: center;
+}
+body .mat-simple-snackbar {
+  justify-content: center;
+  font-size: 1em;
+}
+body .snackbar-error {
+  background-color: #e74c3c;
+}
+body .snackbar-warning {
+  background-color: #f1c40f;
+}
+body .snackbar-info {
+  background-color: #239b56;
+  /****************************/
+}
+
+app-root {
+  width:100%;
+  height: 100%;
+}

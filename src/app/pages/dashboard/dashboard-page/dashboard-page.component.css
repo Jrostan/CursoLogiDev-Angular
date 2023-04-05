@@ -1,0 +1,17 @@
+.dashboard {
+  height: 100%;
+}
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+.sidenav-content__filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.drawer {
+  height: 100%;
+}
