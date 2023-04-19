@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: '', component:DashboardPageComponent, children: [ //al opcion children acepta un array de redirecciones para el sub roter-ouler
     { path: 'pokemons', component:PokemonsComponent},
     { path: 'digimons', component:DigimonsComponent},
-    { path: 'medabots', component:MedabotsComponent}
+    { path: 'medabots', component:MedabotsComponent},
+    {path:'', redirectTo:'/pokemons', pathMatch:'prefix'}
   ]},
 ];
 

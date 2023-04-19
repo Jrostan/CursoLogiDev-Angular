@@ -7,6 +7,7 @@ import { DigimonsComponent } from './dashboard/digimons/digimons.component';
 import { MedabotsComponent } from './dashboard/medabots/medabots.component';
 import { DashboardPagesRoutingModule } from './dashboard-page-routing.module';
 import { DashboardComponentsModule } from '../commons/shared/dashboard-components.module';
+import { AnimeService } from '../commons/services/animes.service';
 
 
 
@@ -16,6 +17,9 @@ import { DashboardComponentsModule } from '../commons/shared/dashboard-component
     PokemonsComponent,
     DigimonsComponent,
     MedabotsComponent
+  ],
+  providers: [
+    AnimeService
   ],
   imports: [
     CommonModule,

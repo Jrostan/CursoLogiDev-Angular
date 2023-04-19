@@ -21,20 +21,20 @@ export class LoginComponent{
   clickLogin():void{
     const user:IRQLogin = {username:this.username, password:this.password};
 
-    this.loginService.logIn(user).subscribe(
-      (data) => console.log(data)
+    this.loginService.logIn(user).subscribe((data) => {
+      localStorage.setItem('accTok', data.accessToken)
+      this.router.navigateByUrl('/dashboard')
+    });
       //de la siguiente manera se capta el error directamente desde
       // el modulo de ejecucion
       /*, (error) =>{
         console.log('este es el error', error);
         alert("UPS algo a salido mal")
-      }*/ )
-    console.log('***login***');
-    //this.router.navigateByUrl('/dashboard');
+      }*/
+    //
   }
 
   clickOnRegister():void {
-    console.log('***En registracion***');
     this.router.navigateByUrl('/register');
     //en caso de no querer redireccionar con codigo utilizar dentro de la etiqueta de HTLM routerLink="/register"
   }

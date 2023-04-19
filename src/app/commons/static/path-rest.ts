@@ -2,6 +2,7 @@ import { environment } from "src/environments/environment";
 
 export class PathRest{
  static readonly GET_LOGIN=environment.hostBackend + '/login';
+ static readonly GET_ANIME=environment.hostBackend + '/anime';
  /* aca se genera una variable estatica de solo lectura
  para de esta maner poder centralizar las rutas como variables.
  todo esto desde los envarioments */
