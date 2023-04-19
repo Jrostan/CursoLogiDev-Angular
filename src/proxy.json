@@ -1,0 +1,8 @@
+no anda
+{
+  "/back/*": {
+    "target" : "http://localhost:3000",
+    "source": false,
+    "loglevel": "debug"
+  }
+}
