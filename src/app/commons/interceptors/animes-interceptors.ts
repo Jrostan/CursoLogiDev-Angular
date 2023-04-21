@@ -4,17 +4,18 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MessageService } from '../services/message.service';
 import { PathRest } from '../static/path-rest';
+import { LocalStorageJwt } from '../static/\'local-starage-ref';
 
 @Injectable()
 export class AnimeInterceptor implements HttpInterceptor {
 
   constructor (
     private messageService: MessageService
-  ) {};
+      ) {};
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       //asignacion de token a header
-      const token = localStorage.getItem('accTok')!;
+      const token = localStorage.getItem(LocalStorageJwt.LS_ACCES_TOKEN)!;
       let requestClone = req
         if(!this.isLogin(req.url)){
         requestClone = req.clone(

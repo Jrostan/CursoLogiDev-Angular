@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AnimeService } from 'src/app/commons/services/animes.service';
 import { Subscription} from 'rxjs';
+import { IAnime } from 'src/app/commons/components/models/animes';
 
 @Component({
   selector: 'app-pokemons',
@@ -8,7 +9,7 @@ import { Subscription} from 'rxjs';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit, OnDestroy {
-
+  pokemonList:IAnime[] = [];
   private subscriptionAnime: Subscription | undefined;
 
   constructor(
@@ -17,7 +18,7 @@ export class PokemonsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscriptionAnime = this.animesSerice.getAnime('pokemon').subscribe((data)=>{
-    console.log(data);})
+    this.pokemonList = data;})
   }
   //MUY IMPORTANTE DESUSCRIBIRSE CUANDO SE DESTRUYA EL OBJETO
   ngOnDestroy(): void {

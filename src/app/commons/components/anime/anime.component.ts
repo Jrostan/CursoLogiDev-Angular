@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IAnime } from '../models/animes';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalAnimeComponent } from '../modal-anime/modal-anime.component';
 
 @Component({
   selector: 'app-anime',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./anime.component.css']
 })
 export class AnimeComponent implements OnInit {
+  @Input() anime = <IAnime>{};
 
-  constructor() { }
+  constructor( public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
+  clickEvolutions(): void {
+		this.dialog.open(ModalAnimeComponent, {
+			data: this.anime.evolutions
+		});
+	}
 
 }

@@ -6,6 +6,9 @@
   border-radius: 17px;
   /* height: 32em; */
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container img {
   max-width: 19em;
@@ -14,4 +17,12 @@
   text-align: center;
   flex: 1;
   max-height: 6em;
+  margin-bottom: 1em;
+  overflow: hidden;
+
+}
+
+.container p{
+  max-height: 4em;
+  text-overflow: ellipsis;
 }

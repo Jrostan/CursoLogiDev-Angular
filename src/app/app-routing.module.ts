@@ -2,11 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/auth/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/auth/register-page/register-page.component';
+import { AnimeGuarsLoadGuard } from './commons/guards/anime-guars-Load.guard';
 
 const routes: Routes = [
   {path:'login', component:LoginPageComponent},
   {path:'register', component:RegisterPageComponent},
-  {path:'dashboard', loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule)}, //de esta manera se importa el modulo que tiene declaado esl submodulo de rutas.
+  {path:'dashboard',
+  canLoad:[AnimeGuarsLoadGuard], //este guard solo funciona para la carga LAZYLOAD este no permite que se descargue el modulo cuando no tienes permisos
+  loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule)}, //de esta manera se importa el modulo que tiene declaado esl submodulo de rutas.
   // ver que loadChildren declara una funcion la cual importa un modulo, una vez encontrado lo ejecuta
   // una vez ejecutado empiezan a regir la nuevas rutas como por ejemplo la sub ruta vacia
   {path:'', redirectTo:'/login', pathMatch:'prefix'},

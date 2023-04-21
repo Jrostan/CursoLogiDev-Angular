@@ -8,6 +8,8 @@ import { MedabotsComponent } from './dashboard/medabots/medabots.component';
 import { DashboardPagesRoutingModule } from './dashboard-page-routing.module';
 import { DashboardComponentsModule } from '../commons/shared/dashboard-components.module';
 import { AnimeService } from '../commons/services/animes.service';
+import { AnimeGuarsGuard } from '../commons/guards/anime-guars.guard';
+import { AnimeGuardChildGuard } from '../commons/guards/anime-guard-child.guard';
 
 
 
@@ -19,7 +21,7 @@ import { AnimeService } from '../commons/services/animes.service';
     MedabotsComponent
   ],
   providers: [
-    AnimeService
+    AnimeService,
   ],
   imports: [
     CommonModule,

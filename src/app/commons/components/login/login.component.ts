@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { IRQLogin } from '../models/auth';
+import { JwtAuthService } from '../../services/jwt-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,17 +13,20 @@ export class LoginComponent{
 
   constructor(
     private router:Router,
-    private loginService:AuthService
+    private loginService:AuthService,
+    private jwtauthservice: JwtAuthService
   ) { }
 
-  username = 'javi';
-  password = '123456'
+  // username = 'javi';
+  // password = '123456'
+   username = 'maria';
+   password = '123'
 
   clickLogin():void{
     const user:IRQLogin = {username:this.username, password:this.password};
 
     this.loginService.logIn(user).subscribe((data) => {
-      localStorage.setItem('accTok', data.accessToken)
+      this.jwtauthservice.login(data.accessToken)
       this.router.navigateByUrl('/dashboard')
     });
       //de la siguiente manera se capta el error directamente desde
